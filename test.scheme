@@ -1,0 +1,16 @@
+(((lambda (mk) (mk mk))
+  (lambda (mk)
+    ((lambda (length) 
+      (lambda (l)
+       (cond
+         ((null? l) 0)
+         (else (add1 (length (cdr l)))))))
+     (lambda (x) ((mk mk) x)))))
+  (quote (a a a a a)))
+
+((y (lambda (length) 
+  (lambda (l)
+   (cond
+     ((null? l) 0)
+     (else (add1 (length (cdr l))))))))
+  (quote (a a a a a)))
